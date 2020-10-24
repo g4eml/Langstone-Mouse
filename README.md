@@ -21,4 +21,21 @@ Copy and paste the following URL into the 'Additional Boards Manager URLs' input
 ```sh
 https://raw.githubusercontent.com/sparkfun/Arduino_Boards/master/IDE_Board_Manager/package_sparkfun_index.json
 ```
+Then select (Tools > Board > Sparkfun AVR Boards > Sparkfun Pro Micro)
+Make sure (Tools > Processor) is set to 'ATmega32u4 (5V, 16MHz)'
+
+You will also need to add the library for handling the rotary encoder:-
+
+Select (Tools > Manage Libraries)
+Search for 'Encoder'
+Scroll down to find the Encoder by Paul Stoffregen
+Click Install
+
+Once all this is in place you should be able to load the .ino file from this repository and upload it to the Arduino. 
+
+
+
+
+
+
 
