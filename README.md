@@ -7,7 +7,8 @@ A good qualty rotary encoder can be connected and used as the tuning knob. Such 
 ## Requirements
 
 This code will only work on an ATmega32u4 processor such as used on the Pro Micro board. Other processors do not support the mouse library that is needed.
-The Rotary encoder needs to have quadrature outputs that are either open collectors or switches to ground. 
+The Rotary encoder needs to have quadrature outputs that are either open collectors or switches to ground.
+Connections for the rotary encoder and switches are shown in the schematic. 
 
 ## Programming
 
@@ -32,6 +33,20 @@ Scroll down to find the Encoder by Paul Stoffregen
 Click Install
 
 Once all this is in place you should be able to load the .ino file from this repository and upload it to the Arduino. 
+
+When the upload has completed the board will be detected as a USB mouse.
+
+## Configuration
+
+The code allows for adjusting the reolution of the encoder. 
+At the beginning of the .ino file you will find the line 
+
+#define encoderStepsPerRev 400
+
+You can change this line to match the resolution of your encoder. The software will then scale the output to a suitable value for Langstone. 
+
+
+
 
 
 
