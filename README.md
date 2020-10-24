@@ -18,7 +18,7 @@ Support for the board needs to be added by doing the following:-
 Start the Arduino IDE and open the preferences window (File > Preferences)
 Copy and paste the following URL into the 'Additional Boards Manager URLs' input field.
 
-code
+'''sh
 https://raw.githubusercontent.com/sparkfun/Arduino_Boards/master/IDE_Board_Manager/package_sparkfun_index.json
-/code
+'''
 
