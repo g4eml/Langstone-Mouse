@@ -4,12 +4,12 @@
 This design configures an Arduino Pro Micro board to behave as if it is a USB mouse. This is optimised for use as the tuning control of the Langstone transceiver. 
 A good qualty rotary encoder can be connected and used as the tuning knob. Such encoders often have a high number of pulses per revolution which can be more than is needed by the Langstone software. The arduino code allows the pulses per revolution to be reduced before feeding the Langstone. 
 
-##Requirements
+## Requirements
 
 This code will only work on an ATmega32u4 processor such as used on the Pro Micro board. Other processors do not support the mouse library that is needed.
 The Rotary encoder needs to have quadrature outputs that are either open collectors or switches to ground. 
 
-##Programming
+## Programming
 
 The Arduino Pro Micro board needs to be programmed using the normal Arduino IDE. Download and install this from https://www.arduino.cc/en/Main/Software
 
