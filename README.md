@@ -12,9 +12,13 @@ Connections for the rotary encoder and switches are shown in the schematic.
 
 ## Programming
 
-The Arduino Pro Micro board needs to be programmed using the normal Arduino IDE. Download and install this from https://www.arduino.cc/en/Main/Software
+First download, save and unzip the files from this repository 
 
-Support for the board needs to be added by doing the following:-
+https://github.com/g4eml/Langstone-Mouse/archive/main.zip
+
+The Arduino Pro Micro board then needs to be programmed using the normal Arduino IDE. Download and install this from https://www.arduino.cc/en/Main/Software
+
+Support for the Pro Micro board needs to be added by doing the following:-
 
 Start the Arduino IDE and open the preferences window (File > Preferences)
 Copy and paste the following URL into the 'Additional Boards Manager URLs' input field.
@@ -32,9 +36,9 @@ Search for 'Encoder'
 Scroll down to find the Encoder by Paul Stoffregen
 Click Install
 
-Once all this is in place you should be able to load the .ino file from this repository and upload it to the Arduino. 
+Once all this is in place you should be able to load the LangstoneMouse.ino file  and upload it to the Arduino. 
 
-When the upload has completed the board will be detected as a USB mouse.
+When the upload has completed the board will be detected as a USB mouse. This should work alongside your existing mouse in Windows. The scroll wheel and buttons can be tested by opening a long test document. 
 
 ## Configuration
 
