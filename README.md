@@ -7,8 +7,11 @@ A good qualty rotary encoder can be connected and used as the tuning knob. Such 
 ## Requirements
 
 This code will only work on an ATmega32u4 processor such as used on the Pro Micro board. Other processors do not support the mouse library that is needed.
+
 Aduino Pro Micro boards are available for about £6 on ebay. Make sure you buy the 5V 16MHz version. 
+
 The Rotary encoder needs to have quadrature outputs that are either open collectors or switches to ground.
+
 Connections for the rotary encoder and switches are shown in the schematic. 
 
 ## Programming
