@@ -38,7 +38,7 @@ When the upload has completed the board will be detected as a USB mouse.
 
 ## Configuration
 
-The code allows for adjusting the reolution of the encoder. 
+The code allows for adjusting the resolution of the encoder. 
 At the beginning of the .ino file you will find the line 
 
 #define encoderStepsPerRev 400
