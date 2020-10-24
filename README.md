@@ -21,12 +21,14 @@ The Arduino Pro Micro board then needs to be programmed using the normal Arduino
 Support for the Pro Micro board needs to be added by doing the following:-
 
 Start the Arduino IDE and open the preferences window (File > Preferences)
+
 Copy and paste the following URL into the 'Additional Boards Manager URLs' input field.
 
 ```sh
 https://raw.githubusercontent.com/sparkfun/Arduino_Boards/master/IDE_Board_Manager/package_sparkfun_index.json
 ```
 Then select (Tools > Board > Sparkfun AVR Boards > Sparkfun Pro Micro)
+
 Make sure (Tools > Processor) is set to 'ATmega32u4 (5V, 16MHz)'
 
 You will also need to add the library for handling the rotary encoder:-
