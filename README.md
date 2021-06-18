@@ -31,6 +31,10 @@ Copy and paste the following URL into the 'Additional Boards Manager URLs' input
 ```sh
 https://raw.githubusercontent.com/sparkfun/Arduino_Boards/master/IDE_Board_Manager/package_sparkfun_index.json
 ```
+Then Select (Tools> Board > Board Manager) Scroll down to "Sparkfun AVR Boards" and choose Install.
+
+Wait for the instalation to complete then select Close
+
 Then select (Tools > Board > Sparkfun AVR Boards > Sparkfun Pro Micro)
 
 Make sure (Tools > Processor) is set to 'ATmega32u4 (5V, 16MHz)'
@@ -42,7 +46,7 @@ Search for 'Encoder'
 Scroll down to find the Encoder by Paul Stoffregen
 Click Install
 
-Once all this is in place you should be able to load the LangstoneMouse.ino file  and upload it to the Arduino. 
+Once all this is in place you should be able to build the LangstoneMouse.ino file  and upload it to the Arduino. 
 
 When the upload has completed the board will be detected as a USB mouse. This should work alongside your existing mouse in Windows. The scroll wheel and buttons can be tested by opening a long test document. 
 
