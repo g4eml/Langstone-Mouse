@@ -10,9 +10,9 @@ This code will only work on an ATmega32u4 processor such as used on the Pro Micr
 
 Aduino Pro Micro boards are available for about £6 on ebay. Make sure you buy the 5V 16MHz version. 
 
-The Rotary encoder needs to have quadrature outputs that are either open collectors or switches to ground.
+The Rotary encoder needs to have quadrature outputs that are either open collectors, switches to ground or TTL levels.
 
-Connections for the rotary encoder and switches are shown in the schematic. 
+Connections for the rotary encoder and switches are shown in the schematic. Pin numbers shown are as marked on the arduino board. 
 
 ## Programming
 
