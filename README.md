@@ -85,8 +85,11 @@ The code allows for adjusting the resolution of the encoder.
 At the beginning of the .ino file you will find the lines 
 
 #define encoderStepsPerRev 400
+
 #define outputStepsPerRev  40
+
 #define reverse false
+
 
 
 You can change these lines to match the resolution of your encoder. The software will then scale the output to a suitable value for Langstone. 
