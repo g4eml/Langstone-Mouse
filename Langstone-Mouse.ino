@@ -12,24 +12,15 @@
 
 #include <Mouse.h>
 
+#define encoderStepsPerRev 400                    //number of steps per revolution of the encoder. Change this value to match your encoder.  
 
-#ifdef ARDUINO_ARCH_RP2040
-#include "pio_encoder.h" 
-#else
-#include <Encoder.h>
-#endif
+#define outputStepsPerRev  40                    //nuber of steps per revolution for output . 40 is a good number to start with. Must be equal to or lower than encoderStepsPerRev. Change this if you want to adjust the tuning rate. 
 
-
-
-#define encoderStepsPerRev 20                   //number of steps per revolution of the encoder. Change this to match your encoder.  
-
-
-#define outputStepsPerRev  20                    //nuber of steps per revolution for tuning. 40 is a good number to start with. Must be equal to or lower than encoderStepsPerRev. Change this if you want to adjust the tuning rate. 
-
+#define reverse false                           // set to true to reverse the tuning direction of the encoder. 
 
 
 #define RPHA 2                        //Rotary encoder A phase connected to Pin 2. Encoder Common connection to ground.  (do not change, needs the interrupt on this pin to work properly)
-#define RPHB 3                        //Rotary encoder B phase connected to Pin 3. Swap the wiring to these two pins to reverse the encoder direction.                                    
+#define RPHB 3                        //Rotary encoder B phase connected to Pin 3.                                   
 #define LEFTBUTTON 4                //Left, right and middle push buttons. Used by Langstone to select the tuning rate and dial lock. 
 #define RIGHTBUTTON 5               //Connect buttons between these three pins and ground. 
 #define MIDDLEBUTTON 6
@@ -43,18 +34,28 @@ int rightButtonReleased;
 int middleButtonReleased;
 
 #ifdef ARDUINO_ARCH_RP2040
+
+#include <pio_encoder.h> 
 PioEncoder Enc(RPHA);
+#define stepsPerClick 2
+#define readEncoder Enc.getCount()
+#define clearEncoder Enc.reset()
+#define startEncoder Enc.begin()
+
 #else
+
+#include <Encoder.h>
 Encoder Enc(RPHA, RPHB);
+#define stepsPerClick 4
+#define readEncoder Enc.read()
+#define clearEncoder Enc.write(0)
+#define startEncoder (void)0
+
 #endif
 
 void setup() 
 {
-#ifdef ARDUINO_ARCH_RP2040
- encoderDiv=encoderStepsPerRev/outputStepsPerRev;
-#else
- encoderDiv=(encoderStepsPerRev*4)/outputStepsPerRev;                     // calculate the requred encoder divisor. (Encoder library outputs 4 steps per input step)
-#endif
+ encoderDiv=(encoderStepsPerRev * stepsPerClick)/outputStepsPerRev;
  pinMode(LEFTBUTTON,INPUT_PULLUP);
  pinMode(RIGHTBUTTON,INPUT_PULLUP);
  pinMode(MIDDLEBUTTON,INPUT_PULLUP);
@@ -62,28 +63,20 @@ void setup()
  rightButtonReleased=false; 
  middleButtonReleased=false; 
  Mouse.begin();
- #ifdef ARDUINO_ARCH_RP2040
- Enc.begin();
- #endif
+ startEncoder;
+
 }
 
 void loop() 
 {
-delay(20);                              //delay to slow down the rate of USB messages. 50 per second is plenty. 
-#ifdef ARDUINO_ARCH_RP2040
-long counts = Enc.getCount()/encoderDiv;    //number of encoder counts since last sent to USB.
-#else
-long counts = Enc.read()/encoderDiv;    //number of encoder counts since last sent to USB.
-#endif
+delay(20);                               //delay to slow down the rate of USB messages. 50 per second is plenty. 
+long counts = readEncoder/encoderDiv;    //number of encoder counts since last sent to USB.
 
 if(counts!=0)
   {
+  if(reverse) counts = 0-counts;
   Mouse.move(0,0,counts);
-#ifdef ARDUINO_ARCH_RP2040
-   Enc.reset();
-#else
-   Enc.write(0);                         //reset the encoder counts
-#endif
+  clearEncoder;
   }
   
   leftButton=digitalRead(LEFTBUTTON);
