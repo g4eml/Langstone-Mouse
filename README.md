@@ -10,7 +10,7 @@ This code will only work on an ATmega32u4 processor such as used on the Pro Micr
 
 Aduino Pro Micro boards are available for about £6 on ebay. Make sure you buy the 5V 16MHz version.
 
-RP2040 Zero boards are also available dor similar prices. Alternatively a Raspberry Pi RP2040 Pico board can be used although this is phisically larger. 
+RP2040 Zero boards are also available for similar prices. Alternatively a Raspberry Pi RP2040 Pico board can be used although this is phisically larger. 
 
 The Rotary encoder needs to have quadrature outputs that are either open collectors, switches to ground or TTL levels.
 
