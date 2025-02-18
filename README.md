@@ -8,15 +8,18 @@ A good qualty rotary encoder can be connected and used as the tuning knob. Such 
 
 This code will only work on an ATmega32u4 processor such as used on the Pro Micro board or with an RP2040 based board.  Other processors do not support the mouse library that is needed.
 
+The RP2040 Zero board is recommended as it is lower cost than the Arduino Pro Micro. 
+
 Aduino Pro Micro boards are available for about £6 on ebay. Make sure you buy the 5V 16MHz version.
 
-RP2040 Zero boards are also available for similar prices. Alternatively a Raspberry Pi RP2040 Pico board can be used although this is phisically larger. 
+RP2040 Zero boards are also available for about £3. Alternatively a Raspberry Pi RP2040 Pico board can be used although this is phisically larger. 
 
 The Rotary encoder needs to have quadrature outputs that are either open collectors, switches to ground or TTL levels.
 
-Connections for the rotary encoder and switches are shown in the schematic. Pin numbers shown are as marked on the arduino board. 
+Connections for the rotary encoder and switches are shown in the schematic. Pin numbers shown are as marked on the arduino or RP2040 board. 
 
-## Programming
+
+## Programming from source
 
 First download, save and unzip the files from this repository 
 
