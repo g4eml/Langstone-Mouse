@@ -21,7 +21,7 @@ Connections for the rotary encoder and switches are shown in the schematic. Pin 
 ## Programming or updating an RP2040 (quick method)
 
 Two pre-compiled firmware files are available for the RP2040. One for a high resolution Encoder with typically 400 Pulses per Revolution and one for a low resolution encoder with typically 40 Pulses per revolution. 
-Select the one nearest to the encoder you are using. If you need to fine tune the response then you will eed to follow the programming from source instructions below.  
+Select the one nearest to the encoder you are using. If you need to fine tune the response then you will need to follow the programming from source instructions below.  
 
 1. Locate the latest compiled firmware file 'Langstone-Mouse_400_ppr.uf2' or 'Langstone-Mouse_40_ppr.uf2' which will be found here https://github.com/g4eml/Langstone-Mouse/releases and save it to your desktop. 
 
