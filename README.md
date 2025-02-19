@@ -12,11 +12,24 @@ The RP2040 Zero board is recommended as it is lower cost than the Arduino Pro Mi
 
 Aduino Pro Micro boards are available for about £6 on ebay. Make sure you buy the 5V 16MHz version.
 
-RP2040 Zero boards are also available for about £3. Alternatively a Raspberry Pi RP2040 Pico board can be used although this is phisically larger. 
+RP2040 Zero boards are also available for about £3. Alternatively a Raspberry Pi RP2040 Pico board can be used although this is physically larger. 
 
 The Rotary encoder needs to have quadrature outputs that are either open collectors, switches to ground or TTL levels.
 
 Connections for the rotary encoder and switches are shown in the schematic. Pin numbers shown are as marked on the arduino or RP2040 board. 
+
+## Programming or updating an RP2040 (quick method)
+
+Two pre-compiled firmware files are available for the RP2040. One for a high resolution Encoder with typically 400 Pulses per Revolution and one for a low resolution encoder with typically 40 Pulses per revolution. 
+Select the one nearest to the encoder you are using. If you need to fine tune the response then you will eed to follow the programming from source instructions below.  
+
+1. Locate the latest compiled firmware file 'Langstone-Mouse_400_ppr.uf2' or 'Langstone-Mouse_40_ppr.uf2' which will be found here https://github.com/g4eml/Langstone-Mouse/releases and save it to your desktop. 
+
+2. Hold down the BOOTSEL button on the RP2040 module while connecting it to your PC using its USB port. The RP2040 should appear as a USB disk drive on your PC.
+
+3. Copy the .uf2 file onto the USB drive. The RP2040 will recognise the file and immediately update its firmware and reboot.
+
+4. A new Mouse HID device should appear in Windows Device Manager.
 
 
 ## Programming from source
